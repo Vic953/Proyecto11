@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Víctor Comino Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+        </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+<style>
+    .bgPerso {
+        background-color: hsla(183, 68%, 20%, 0.713);
+        color: white;
+    }
+
+    h1 {
+        color: black;
+    }
+
+    .foot {
+        color: white;
+        display: grid;
+        place-items: center;
+        margin-top: 0.5rem;
+    }
+
+
+    #img {
+        display: flex;
+        text-align: center;
+        border-radius: 20%;
+        width: 30%;
+        margin: 2rem;
+    }
+
+    img {
+        border-radius: 20%;
+
+        border: 1px solid rgba(255, 255, 255, 0);
+    }
+
+    textarea {
+        resize: vertical;
+    }
+
+    .check {
+        border: 1px solid black;
+    }
+
+    .submt {
+
+        width: 30%;
+    }
+
+    .submtDiv {
+        display: grid;
+        place-items: center;
+        margin-bottom: 0.5rem;
+    }
+
+    input[pattern]:focus:invalid {
+        border-color: red;
+    }
+
+    input[pattern]:focus:valid {
+        border-color: blue;
+    }
+
+    .spinner {
+        position: relative;
+        left: 55%;
+        bottom: 15rem;
+    }
+</style>
+
+<body>
+    <div class="container" id="content">
+        <!-- Cabecera -->
+        <div class="row">
+            <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+                <div class="container">
+                    <span class="navbar-brand" href="#">DigiDev</span>
+                    <button class=" navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="collapsibleNavId">
+                        <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#" aria-current="page">Home
+                                    <span class="visually-hidden">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contáctanos</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- Cuerpo -->
+        <div class="row bgPerso">
+            <!-- Imágen -->
+            <div class="col-md-6 d-md-grid d-none" id="img">
+                <picture>
+                    <source srcset="https://raw.githubusercontent.com/Vic953/img/main/img/Atenci%C3%B3n.jpg"
+                        type="image/jpg" />
+                    <img src="https://raw.githubusercontent.com/Vic953/img/main/img/Atenci%C3%B3n.jpg" class="img-fluid"
+                        alt="image desc" />
+                </picture>
+            </div>
+
+            <!-- Formulario -->
+            <div class="col-md-6 d-grid" id="form">
+                <h1>Contácta con nosotros</h1>
+                <form id="miFormulario" class="row g-3 needs-validation" novalidate>
+                    <!-- Email -->
+                    <div class="mb-1 ">
+                        <i class="bi bi-envelope"></i>
+                        <label for="" class="form-label">Email</label>
+                        <input type="email" id="email" class="form-control" placeholder="Introduce tu Email "
+                            pattern="[a-zA-Z0-9!#$%&'*\/=?^_`\{\|\}~\+\-]([\.]?[a-zA-Z0-9!#$%&'*\/=?^_`\{\|\}~\+\-])+@[a-zA-Z0-9]([^@&%$\/\(\)=?¿!\.,:;]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{2,4}([\.][a-zA-Z]{2})?"
+                            required />
+                        <div class="invalid-tooltip">
+                            Por favor, introduce una dirección de correo electrónico válida.
+                        </div>
+                    </div>
+                    <!-- Select -->
+                    <div class="mb-1 ">
+                        <i class="bi bi-list"></i>
+                        <label for="" class="form-label">Asunto</label>
+                        <select class="form-select form-select-lg">
+                            <option value="">Atención al cliente</option>
+                            <option value="">Dpto. RR.HH</option>
+                            <option value="">Mantenimiento</option>
+                        </select>
+                    </div>
+                    <!-- Text Area -->
+                    <div class="mb-1">
+                        <i class="bi bi-chat-square-dots"></i>
+                        <label for="" class="form-label">Explique el motivo de contácto</label>
+                        <textarea class="form-control" id="tArea" rows="1" required></textarea>
+                        <div class="invalid-tooltip">
+                            Por favor, explique el motivo de su contacto.
+                        </div>
+                    </div>
+                    <!-- File input -->
+                    <div class="mb-3">
+                        <i class="bi bi-files"></i>
+                        <label for="" class="form-label"> Selecciona un fichero relevante para su consulta</label>
+                        <input type="file" class="form-control" placeholder="" />
+                    </div>
+                    <!-- Checked -->
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-check ">
+                                <input class="form-check-input check" id="chekAviso" type="checkbox" required />
+                                <label class="form-check-label" for="">Acepto el aviso legal <a href="#">politica de
+                                        privacidad</a> <span style="font-size: 0.8rem;">(Si acepta el tratamiento de sus datos con esta finalidad
+                                        marque esta
+                                        casilla)</span></label>
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-check ">
+                                <input class="form-check-input check" id="chekTerm" type="checkbox" required />
+                                <label class="form-check-label" for="">He leído y acepto los términos de condiciones
+                                <span style="font-size: 0.8rem;">(Si acepta el tratamiento de sus datos con esta finalidad marque esta
+                                casilla)</span></label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Campo oculto -->
+                    <div>
+                        <label class="visually-hidden" for="inputName">Valido</label>
+                    </div>
+                    <!-- Submit -->
+                    <div class="submtDiv">
+                        <button id="enviar" class="btn btn-dark submt">
+                            Enviar formulario
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Spinner -->
+            <div class="spinner">
+                <button class="btn btn-primary d-none text-center" id="spin" type="button" disabled>
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    Loading...
+                </button>
+            </div>
+        </div>
+        <!-- Footer  -->
+        <div class="row">
+            <div class="col-md-12 bg-dark">
+                <footer class="foot">
+                    <p> &copy Creado y realizado por Víctor Comino</p>
+                </footer>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('miFormulario');
+        const enviar = document.getElementById('enviar');
+
+        enviar.addEventListener('click', function (event) {
+            event.preventDefault(); // Evita que el formulario se envíe automáticamente
+
+            if (form.checkValidity()) {
+                document.getElementById('form').classList.add('d-none');
+                document.getElementById('spin').classList.remove('d-none');
+                document.getElementById('spin').classList.add('d-grid');
+                alert('Formulario válido. ¡Gracias por tu envío!');
+
+            } else {
+                alert('Por favor, completa todos los campos correctamente.');
+            }
+
+            form.classList.add('was-validated'); // Marca los campos que no están válidos
+        });
+
+        // Configura los tooltips de Bootstrap para los campos inválidos
+        let tooltips = document.querySelectorAll('.invalid-tooltip');
+        tooltips.forEach(function (tooltip) {
+            new bootstrap.Tooltip(tooltip, {
+                boundary: 'window',
+                placement: 'top'
+            });
+        });
+    });
+</script>
